@@ -8,15 +8,15 @@ namespace VTORRES_PruebaProgreso1.Models
         public int Cedula { get; set; }
         [Required]
         [StringLength(10)]
-        public decimal PrecioApagar { get; set; }
-        [Range(100, 1000, ErrorMessage = "El precio no pueda bajar de los 100")]
+        public decimal Salario { get; set; }
+        [Range(100, 10000, ErrorMessage = "El salario debe ser mensual, no anual")]
 
         public string Nombre { get; set; }
         [Required(ErrorMessage = "El nombre es necesario")]
-       public bool esChino { get; set; } = true;
+       public bool Soltero { get; set; } 
         [Display(Name = "dia de compra")]
-        public Celular celular { get; set; }
-        public DateTime Diadecompra { get; set; } = DateTime.Now;
+        public Celular Celular { get; set; }
+        public DateTime Nacimiento{ get; set; } 
        
        
         
