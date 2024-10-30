@@ -6,7 +6,8 @@
         decimal PrecioApagar { get; set; }
         string Nombre { get; set; }
 
-        bool esChino = true;
+        bool esChino { get; set; } = true;
+        
         
        
         
