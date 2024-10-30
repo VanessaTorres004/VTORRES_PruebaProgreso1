@@ -7,7 +7,7 @@
         string Nombre { get; set; }
 
         bool esChino { get; set; } = true;
-        
+        DateTime DateTime { get; set; }
         
        
         
