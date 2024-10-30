@@ -15,7 +15,7 @@ namespace VTORRES_PruebaProgreso1.Models
         [Required(ErrorMessage = "El nombre es necesario")]
         bool esChino { get; set; } = true;
         [Display(Name = "dia de compra")]
-        DateTime DateTime { get; set; }
+        public DateTime Diadecompra { get; set; } = DateTime.Now;
         
        
         
