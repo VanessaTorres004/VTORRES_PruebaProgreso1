@@ -36,7 +36,7 @@ namespace VTORRES_PruebaProgreso1.Controllers
 
             var torres = await _context.Torres
                 .Include(t => t.Celular)
-                .FirstOrDefaultAsync(m => m.Cedula == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (torres == null)
             {
                 return NotFound();
@@ -57,7 +57,7 @@ namespace VTORRES_PruebaProgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Cedula,Salario,Nombre,Soltero,Nacimiento,CelularId")] Torres torres)
+        public async Task<IActionResult> Create([Bind("Id,Cedula,Salario,Nombre,Soltero,Nacimiento,CelularId")] Torres torres)
         {
             if (ModelState.IsValid)
             {
@@ -91,9 +91,9 @@ namespace VTORRES_PruebaProgreso1.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Cedula,Salario,Nombre,Soltero,Nacimiento,CelularId")] Torres torres)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Cedula,Salario,Nombre,Soltero,Nacimiento,CelularId")] Torres torres)
         {
-            if (id != torres.Cedula)
+            if (id != torres.Id)
             {
                 return NotFound();
             }
@@ -107,7 +107,7 @@ namespace VTORRES_PruebaProgreso1.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TorresExists(torres.Cedula))
+                    if (!TorresExists(torres.Id))
                     {
                         return NotFound();
                     }
@@ -132,7 +132,7 @@ namespace VTORRES_PruebaProgreso1.Controllers
 
             var torres = await _context.Torres
                 .Include(t => t.Celular)
-                .FirstOrDefaultAsync(m => m.Cedula == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (torres == null)
             {
                 return NotFound();
@@ -158,7 +158,7 @@ namespace VTORRES_PruebaProgreso1.Controllers
 
         private bool TorresExists(int id)
         {
-            return _context.Torres.Any(e => e.Cedula == id);
+            return _context.Torres.Any(e => e.Id == id);
         }
     }
 }

@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VTORRES_PruebaProgreso1.Data;
 
@@ -11,9 +12,11 @@ using VTORRES_PruebaProgreso1.Data;
 namespace VTORRES_PruebaProgreso1.Migrations
 {
     [DbContext(typeof(VTORRES_PruebaProgreso1Context))]
-    partial class VTORRES_PruebaProgreso1ContextModelSnapshot : ModelSnapshot
+    [Migration("20241030194414_UpdateTorresModel2")]
+    partial class UpdateTorresModel2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -36,11 +39,10 @@ namespace VTORRES_PruebaProgreso1.Migrations
                         .HasColumnType("nvarchar(100)");
 
                     b.Property<decimal>("Precio")
-                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("year")
-                        .HasMaxLength(4)
+                        .HasMaxLength(200)
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -56,9 +58,8 @@ namespace VTORRES_PruebaProgreso1.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Cedula")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Cedula")
+                        .HasColumnType("int");
 
                     b.Property<int>("CelularId")
                         .HasColumnType("int");
@@ -72,16 +73,12 @@ namespace VTORRES_PruebaProgreso1.Migrations
 
                     b.Property<decimal>("Salario")
                         .HasMaxLength(10)
-                        .HasPrecision(18, 2)
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<bool>("Soltero")
                         .HasColumnType("bit");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("Cedula")
-                        .IsUnique();
 
                     b.HasIndex("CelularId");
 

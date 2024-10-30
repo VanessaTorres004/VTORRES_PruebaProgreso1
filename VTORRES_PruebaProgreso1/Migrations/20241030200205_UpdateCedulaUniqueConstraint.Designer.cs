@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using VTORRES_PruebaProgreso1.Data;
 
@@ -11,9 +12,11 @@ using VTORRES_PruebaProgreso1.Data;
 namespace VTORRES_PruebaProgreso1.Migrations
 {
     [DbContext(typeof(VTORRES_PruebaProgreso1Context))]
-    partial class VTORRES_PruebaProgreso1ContextModelSnapshot : ModelSnapshot
+    [Migration("20241030200205_UpdateCedulaUniqueConstraint")]
+    partial class UpdateCedulaUniqueConstraint
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

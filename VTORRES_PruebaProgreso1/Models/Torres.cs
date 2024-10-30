@@ -4,6 +4,8 @@ namespace VTORRES_PruebaProgreso1.Models
 {
     public class Torres
     {
+        [Key]
+        public int Id { get; set; }
         public int Cedula { get; set; }
         [Required]
         [StringLength(10)]
