@@ -14,12 +14,17 @@ namespace VTORRES_PruebaProgreso1.Models
         public string Nombre { get; set; }
         [Required(ErrorMessage = "El nombre es necesario")]
        public bool Soltero { get; set; } 
-        [Display(Name = "dia de compra")]
+        [Display(Name = "si/no")]
         public Celular Celular { get; set; }
-        public DateTime Nacimiento{ get; set; } 
-       
-       
+
+        public DateTime Nacimiento{ get; set; }
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date)]
+        public int CelularId { get; set; }
         
-       
+
+
+
+
     }
 }
