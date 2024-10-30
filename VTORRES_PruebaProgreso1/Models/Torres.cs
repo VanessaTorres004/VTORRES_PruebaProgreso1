@@ -14,7 +14,7 @@ namespace VTORRES_PruebaProgreso1.Models
         public string Nombre { get; set; }
         [Required(ErrorMessage = "El nombre es necesario")]
        public bool Soltero { get; set; } 
-        [Display(Name = "si/no")]
+        [Display(Name = "true=1/false=0")]
         public Celular Celular { get; set; }
 
         public DateTime Nacimiento{ get; set; }

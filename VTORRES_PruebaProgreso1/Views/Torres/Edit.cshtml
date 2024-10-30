@@ -12,12 +12,7 @@
     <div class="col-md-4">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Id" />
-            <div class="form-group">
-                <label asp-for="Cedula" class="control-label"></label>
-                <input asp-for="Cedula" class="form-control" />
-                <span asp-validation-for="Cedula" class="text-danger"></span>
-            </div>
+            <input type="hidden" asp-for="Cedula" />
             <div class="form-group">
                 <label asp-for="Salario" class="control-label"></label>
                 <input asp-for="Salario" class="form-control" />
